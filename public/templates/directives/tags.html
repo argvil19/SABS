@@ -1,0 +1,6 @@
+<aside class="col-md-offset-1 col-md-3 jumbotron aside">
+    <h4>Filter posts by tags</h4>
+    <select class="tag-list" ng-model="query.tags">
+        <option ng-repeat="tag in service.tags | limitTo:10" class="tag-item" value="{{tag.tagName}}"><a>{{tag.tagName}}</a> ({{tag.posts.length}})</option>
+    </select>
+</aside>

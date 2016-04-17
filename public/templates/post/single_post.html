@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 jumbotron">
+			<h2>{{service.activePost.title}}</h2>
+			<h5>{{service.activePost.date | date}}</h5>
+			<p class="post-content" ng-bind-html="service.activePost.content"></p>
+			<hr/>
+			<br/>
+			<div class="comments-section">
+				<h3>Comments</h3>
+				<p ng-hide="service.activePost.comments.length">There is no comments. Be the first one!</p>
+				<p ng-hide="auth.authInfo.username" >You must be logged in in order to comment.</p>
+				<form name="commentForm" ng-show="auth.authInfo.username" ng-submit="newComment(service.activePost)" novalidate>
+					<label for="content">Content:</label>
+					<textarea name="content" ng-model="service.newComment.content" class="form-control" rows="3" ng-minlength="10" required></textarea>
+					<br/>
+					<input type="submit" class="btn btn-primary" ng-disabled="!commentForm.$valid" value="Submit" />
+				</form>
+				<hr/>
+				<ul class="comment-list">
+					<li ng-repeat="comment in service.activePost.comments | orderBy:'date'">
+						<div class="comment">
+							<div class="admin-comment" ng-show="auth.authInfo.userLevel === 2">
+								<i class="glyphicon glyphicon-remove" ng-click="service.deleteComment(service.activePost, comment)"></i>
+							</div>
+							<div class="title-div">
+								<h4 class="comment-title">{{comment.author}}</h4>
+								<h6 class="comment-date">{{comment.datePosted | date}}</h6>
+							</div>
+							<p class="comment-content">{{comment.content}}</p>
+							<hr/>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<author></author>
+	</div>
+	
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row jumbotron">
+        <div class="col-md-12">
+            <h2>Welcome to Simple Angular Blog System (SABS)</h2>
+            <a href="#/admin/dashboard/new-post/" class="btn btn-primary">New post</a>
+            <h4>Listing of all post:</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <thead>
+                            <tr>
+                                <th>Post name</th>
+                                <th>Post Author</th>
+                                <th>Created on</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="post in service.posts | orderBy:'date':true">
+                                <td>{{post.title}}</td>
+                                <td>{{post.author}}</td>
+                                <td>{{post.date | date}}</td>
+                                <td>
+                                    <i ng-click="service.getInfoEditPost(post)" class="glyphicon glyphicon-pencil"></i>
+                                    <i ng-click="openModal(post)" class="glyphicon glyphicon-remove"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </tr>
+                </table>
+                <p ng-hide="service.posts.length">No posts found</p>
+            </div>
+        </div>
+    </div>
+</div>

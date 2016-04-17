@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+	    <div class="col-md-8 jumbotron">
+	        <div class="post" ng-repeat="post in service.posts | orderBy:'date':true | filter:query">
+	        	<div>
+	        		<h2 ng-click="setActivePost(post)" class="post-title">{{post.title}}</h2>
+	                <h4 class="date">{{post.date | date}}</h4>
+	        	</div>
+	                <h4 class="abstract"><i>{{post.abstract}}</i></h4>
+	            <div class="comments-counter">
+	                <div ng-show="auth.authInfo.username" class="counter-div">
+	                	<i ng-click="service.votePost(post, 'up')" class="glyphicon glyphicon-plus" ></i>
+		                <span class="voteCount">{{post.votes.totalVotes}}</span>
+		                <i ng-click="service.votePost(post, 'down')" class="glyphicon glyphicon-minus"></i>
+		                <span class="separator"> | </span>
+	                </div>
+	                <a>{{post.comments.length}} comments</a>
+	            </div>
+	        		<hr/>
+	        </div>
+	        <h2 class="text-muted" ng-hide="service.posts.length">Sorry, no posts found</h2>
+	            
+	    </div>
+	    <tags></tags>
+	</div>
+</div>

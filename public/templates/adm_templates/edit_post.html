@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+	    <div class="col-md-9 jumbotron">
+	    	<form name="postForm" ng-submit="service.editPost()" novalidate>
+		        <label>Title: <input type="text" class="form-control" name="title" ng-minlength="5" ng-maxlength="50" ng-model="service.infoEditPost.title" required /></label>
+		        <text-angular ng-model="service.infoEditPost.content" required></text-angular>
+		        <label>Abstract:  <input type="text" class="form-control" name="abstract" ng-minlength="5" ng-maxlength="300" ng-model="service.infoEditPost.abstract" value="{{service.infoEditPost.abstract}}" required /></label>
+		        <label>Tags (separated by space): <input type="text" name="tags" ng-model="service.infoEditPost.tags" class="form-control" value={{service.infoEditPost.tags.join(' ')}} required /></label>
+		        <br/>
+		        <input type="submit" ng-disabled="!postForm.$valid" class="btn btn-primary" value="Submit" />
+			</form>
+	    </div>
+	</div>
+</div>

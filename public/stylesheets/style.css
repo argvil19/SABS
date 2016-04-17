@@ -1,0 +1,103 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+i {
+    cursor:pointer;
+}
+
+table a {
+    color:black;
+    text-decoration: none;
+}
+
+hr {
+  border:1px solid #DDDDDD;
+}
+
+.post-title {
+  display: inline-block;
+  cursor:pointer;
+}
+
+.date {
+  display: inline-block;
+  float:right;
+  margin-top:1.5em;
+  color:#999999;
+}
+
+.comments-counter {
+  text-align: right
+}
+
+.comment-list {
+  padding:0;
+  margin-top:2em;
+  list-style-type: none;
+}
+
+.comment h4, h6 {
+  display:inline-block;
+}
+
+.comment h6 {
+  color:#999999;
+}
+
+.reply-comment {
+  text-align:right;
+}
+
+.comments-section {
+  background-color:#444;
+  color:white;
+  border-radius:10px;
+  padding:2em;
+}
+
+.comments-section hr {
+  border:1px solid #666;
+}
+
+.comment-content {
+  font-size: 120% !important;
+  text-align: justify;
+}
+
+.counter-div {
+  display: inline-block;
+}
+
+.separator {
+  color:#999;
+  margin:0 1em;
+}
+
+.voteCount {
+  color:#888;
+  margin: 0 0.5em;
+}
+
+.admin-comment i {
+  float:right;
+  color:#DF4B39;
+}
+
+.comment-content {
+  white-space: pre-line;
+}
+
+.post-content img {
+  margin:1em;
+}
+
+a {
+  cursor:pointer;
+}
+
+.footer {
+  background-color:#F8F8F8;
+  padding:2em;
+  border:1px solid #D8D8D8;
+}

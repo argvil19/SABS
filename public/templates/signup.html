@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+	    <div class="col-md-12 jumbotron text-center">
+	        <form name="signup" ng-submit="saveUser()" novalidate>
+	            <fieldset>
+	                <legend>Sign Up</legend>
+	                <p class="alert alert-info" ng-if="!username.$dirty || !password.$dirty">Username length should be 3-12. Password length should be 6-30</p>
+	                <p class="alert alert-warning" ng-show="userTaken">That username is already taken.</p>
+	                <label>Username: <input type="text" name="user" class="form-control" ng-model="newUser.user" ng-minlength="3" ng-maxlength="12" required/></label><br/>
+	                <label>Password: <input type="password" class="form-control" ng-model="newUser.pass" ng-minlength="6" ng-maxlength="30" required /></label><br/>
+	                <br/>
+	                <input type="submit" class="btn btn-primary" ng-disabled="!signup.$valid" value="Submit" />
+	            </fieldset>
+	        </form>
+	    </div>
+	</div>
+</div>

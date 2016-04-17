@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+	    <div class="col-md-12 jumbotron text-center">
+	        <form name="signin" ng-submit="loginUser()" novalidate>
+	            <fieldset>
+	                <legend>Sign In</legend>
+	                <p class="alert alert-warning" ng-show="errorLog">Incorrect username or password</p>
+	                <label>Username: <input type="text" name="user" class="form-control" ng-model="user.user" ng-minlength="3" ng-maxlength="12" required/></label><br/>
+	                <label>Password: <input type="password" class="form-control" ng-model="user.pass" ng-minlength="6" ng-maxlength="30" required /></label><br/>
+	                <br/>
+	                <input type="submit" class="btn btn-primary" ng-disabled="!signin.$valid" value="Submit" />
+	            </fieldset>
+	        </form>
+	    </div>
+	</div>
+</div>
